@@ -8,6 +8,7 @@ TagManager:
   - Brick
   - Floor
   - Handle
+  - Wall
   layers:
   - Default
   - TransparentFX
