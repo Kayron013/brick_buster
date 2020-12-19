@@ -9,7 +9,7 @@ public class BallController : MonoBehaviour
     private new Collider2D collider;
     private GameController controller;
 
-    public static Vector2 startingBallPos = new Vector2(4.42f, -3.78f);
+    public static Vector2 startingBallPos = new Vector2(4.42f, -3.972477f);
     public static float InitialSpeed { get; } = 7;
 
     // Start is called before the first frame update
@@ -29,8 +29,10 @@ public class BallController : MonoBehaviour
     public void Launch()
     {
         var mousePos = Utils.GetMousePosition();
+        var minY = startingBallPos.y + .35f;
+        var targetPos = new Vector2(mousePos.x, Mathf.Clamp(mousePos.y,minY, 1000f));
         var ballPos = rb.position;
-        var vector = (mousePos - ballPos).normalized;
+        var vector = (targetPos - ballPos).normalized;
         rb.velocity = vector * InitialSpeed;
     }
 
@@ -62,7 +64,7 @@ public class BallController : MonoBehaviour
             if (y == lastY)
             {
                 stuckCounter++;
-                if(stuckCounter > 10)
+                if(stuckCounter > 3)
                 {
                     var x = rb.velocity.x > 0 ? 1 : -1; // keep x direction
                     rb.AddForce(new Vector2(x, -1));

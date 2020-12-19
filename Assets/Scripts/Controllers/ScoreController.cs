@@ -31,7 +31,7 @@ public class ScoreController : MonoBehaviour
     public void Reset()
     {
         SetCurrentRound("1");
-        SetCurrentStreak("");
+        SetCurrentStreak("0");
         SetCurrentTime("");
     }
 

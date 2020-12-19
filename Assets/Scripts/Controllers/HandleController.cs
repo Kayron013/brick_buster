@@ -7,7 +7,7 @@ public class HandleController : MonoBehaviour
     private GameController controller;
     private Rigidbody2D rb;
 
-    private Vector2 startingPos = new Vector2(4.4244f, -3.9708f);
+    private Vector2 startingPos = new Vector2(4.4244f, -4.18f);
 
     // Start is called before the first frame update
     void Start()

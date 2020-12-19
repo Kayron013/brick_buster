@@ -89,17 +89,17 @@ public class GameController : MonoBehaviour
 
     public void RestartRound()
     {
-        TimeKeeper.StopClock();
         if (WaveIsActive)
         {
+            TimeKeeper.StopClock();
+            WaveIsActive = false;
             currentRound++;
+            currentStreak = 0;
+            mainBall.Reset();
+            handle.Reset();
+            score.SetCurrentRound(currentRound.ToString());
+            score.SetCurrentStreak(currentStreak.ToString());
         }
-        currentStreak = 0;
-        WaveIsActive = false;
-        mainBall.Reset();
-        handle.Reset();
-        score.SetCurrentRound(currentRound.ToString());
-        score.SetCurrentStreak(currentStreak.ToString());
     }
 
     void StartWave()
