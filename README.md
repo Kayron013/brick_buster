@@ -1,6 +1,6 @@
 # Brick Buster
 
-A neon themed rendition of Brick Breaker in Unity.
+A neon, Mega Man themed rendition of Brick Breaker in Unity.
 
 Project builds are available in the `builds` branch.
 
